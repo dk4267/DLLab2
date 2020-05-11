@@ -30,8 +30,9 @@ model = Sequential()
 model.add(Dense(15, input_dim=6, activation='relu'))
 model.add(Dense(1, activation='softmax'))
 model.compile(loss='binary_crossentropy', optimizer=adam, metrics=['acc'])
-history = model.fit(X_train, Y_train, batch_size=64, epochs=100, initial_epoch=0)
 
+#fit model and print accuracy and loss results
+history = model.fit(X_train, Y_train, batch_size=64, epochs=100, initial_epoch=0)
 print(model.summary())
 print(model.evaluate(X_test, Y_test))
 
